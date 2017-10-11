@@ -2,7 +2,6 @@
 
 ***This repository contains the final code using the knowledge gained in the above tests combined together. If you see the results below, I combine all the images generated at each step and form the final filtered image. The results are for different images which have different lane colors and conditions.***
 
-***NOTE: Currently making final changes in the code. Please get the latest copy in a day.***
 
 # Requirements
 

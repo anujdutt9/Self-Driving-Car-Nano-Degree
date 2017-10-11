@@ -1,3 +1,5 @@
+# Project-1: Finding Lane Lines in Images and Videos
+
 # Import Dependencies
 import os
 from sys import argv
@@ -11,7 +13,6 @@ import matplotlib.pyplot as plt
 from matplotlib.image import imread
 from matplotlib import style
 style.use('ggplot')
-
 
 
 
@@ -31,13 +32,14 @@ def process_image(image):
     # NOTE: The output you return should be a color image (3 channel) for processing video below
     # TODO: put your pipeline here,
     # you should return the final output (image with lines are drawn on lanes)
-    result = LaneLinesPipeline(image,name=None)
+    result = LaneLinesPipeline(image,name=None,arg='videos')
     return result
 
 
 
 # Check all Files in the Directory
 print('List of all Test Images in Folder',os.listdir('test_images/'))
+
 
 
 # Build the Pipeline
@@ -52,7 +54,7 @@ print('List of all Test Images in Folder',os.listdir('test_images/'))
 # Pipeline to draw Lane Lines
 def LaneLinesPipeline(img,name=None,arg=None):
 
-    tic = time.time()
+    start = time.time()
 
     x = img.shape[1]
     y = img.shape[0]
@@ -88,38 +90,38 @@ def LaneLinesPipeline(img,name=None,arg=None):
 
     # Step-7: Plot Lane Lines on Actual Image
     filtered_image = weighted_img(hough_transformed_image,img,α=0.6, β=1., λ=0.)
-    toc = time.time()
+    end = time.time()
 
-    print('Time Taken for whole Process is {} ms'.format((toc - tic) * 100))
+    print('Time Taken for whole Process is {} ms'.format((end - start) * 100))
 
-    # if arg == 'images':
-    #     arr = [['Greyscale & Gaussian Blurring','Edge Detection'],
-    #            ['Region of Interest', 'Hough Transform']]
-    #
-    #     arr1 = [[gaussian_image,canny_edge],
-    #             [image_roi, hough_transformed_image]]
-    #
-    #     # Plot the Final Output with Outputs of Process Followed
-    #     fig,ax = plt.subplots(nrows=2,ncols=2)
-    #
-    #     for i in range(0,2):
-    #         for j in range(0,2):
-    #             ax[i,j].imshow(arr1[i][j],cmap='gray')
-    #             ax[i,j].set_axis_off()
-    #             ax[i,j].set_title(arr[i][j])
-    #             ax[i,j].set_aspect('equal')
-    #
-    #     figName = imageOutDir+name+'_Process.jpg'
-    #     fig.savefig(figName)
-    #
-    #     fig1,ax1 = plt.subplots()
-    #     ax1.imshow(filtered_image)
-    #     ax1.set_axis_off()
-    #     ax1.set_title('Final Image')
-    #     path = imageOutDir+name+'_Final.jpg'
-    #     fig1.savefig(path)
-    #
-    #     plt.show()
+    if arg == 'images':
+        arr = [['Greyscale & Gaussian Blurring','Edge Detection'],
+               ['Region of Interest', 'Hough Transform']]
+
+        arr1 = [[gaussian_image,canny_edge],
+                [image_roi, hough_transformed_image]]
+
+        # Plot the Final Output with Outputs of Process Followed
+        fig,ax = plt.subplots(nrows=2,ncols=2)
+
+        for i in range(0,2):
+            for j in range(0,2):
+                ax[i,j].imshow(arr1[i][j],cmap='gray')
+                ax[i,j].set_axis_off()
+                ax[i,j].set_title(arr[i][j])
+                ax[i,j].set_aspect('equal')
+
+        figName = imageOutDir+name+'_Process.jpg'
+        fig.savefig(figName)
+
+        fig1,ax1 = plt.subplots()
+        ax1.imshow(filtered_image)
+        ax1.set_axis_off()
+        ax1.set_title('Final Image')
+        path = imageOutDir+name+'_Final.jpg'
+        fig1.savefig(path)
+
+        plt.show()
 
     return filtered_image
 
@@ -128,54 +130,33 @@ def LaneLinesPipeline(img,name=None,arg=None):
 
 # Main Function
 if __name__ == '__main__':
-    # if argv[0] == 'images':
-    #     for image in glob.glob('test_images/*.jpg'):
-    #         img = imread(image)
-    #         name = os.path.splitext(image)[0][12:]
-    #         LaneLinesPipeline(img,name)
-    #
-    # elif argv[0] == 'videos':
-    #     # Process White Lane Lines Video
-    #     print('Processing Video: solidWhiteRight.mp4')
-    #     whiteLanesOut = 'OutputVideos/solidWhiteRightOut.mp4'
-    #     clip1 = VideoFileClip('test_videos/solidWhiteRight.mp4')
-    #     whiteLanesOutClip = clip1.fl_image(process_image)
-    #     whiteLanesOutClip.write_videofile(whiteLanesOut, audio=False)
-    #
-    #     # Process Yellow Lane Lines Video
-    #     print('\nProcessing Video: solidYellowLeft.mp4')
-    #     yellowLanes_output = 'OutputVideos/solidYellowLeftOut.mp4'
-    #     clip2 = VideoFileClip('test_videos/solidYellowLeft.mp4')
-    #     yellowLanes_clip = clip2.fl_image(process_image)
-    #     yellowLanes_clip.write_videofile(yellowLanes_output, audio=False)
-    #
-    # elif argv[0] == 'help':
-    #     print('1. To Process Images, Use:  python main.py images')
-    #     print('2. To Process Videos, Use:  python main.py videos')
-    #
-    # else:
-    #     print('\nPlease Enter Correct Argument !!!')
-    #     print('\nUse:\npython main.py help \nfor help ')
+    if argv[1] == 'images':
+        for image in glob.glob('test_images/*.jpg'):
+            img = imread(image)
+            name = os.path.splitext(image)[0][12:]
+            LaneLinesPipeline(img,name,arg='images')
 
+    elif argv[1] == 'videos':
+        # Process White Lane Lines Video
+        print('Processing Video: solidWhiteRight.mp4')
+        whiteLanesOut = 'OutputVideos/solidWhiteRightOut.mp4'
+        clip1 = VideoFileClip('test_videos/solidWhiteRight.mp4')
+        whiteLanesOutClip = clip1.fl_image(process_image)
+        whiteLanesOutClip.write_videofile(whiteLanesOut, audio=False)
 
-    # Process White Lane Lines Video
-    print('Processing Video: solidWhiteRight.mp4')
-    whiteLanesOut = 'OutputVideos/solidWhiteRightOut.mp4'
-    clip1 = VideoFileClip('test_videos/solidWhiteRight.mp4')
-    whiteLanesOutClip = clip1.fl_image(process_image)
-    whiteLanesOutClip.write_videofile(whiteLanesOut, audio=False)
+        # Process Yellow Lane Lines Video
+        print('\nProcessing Video: solidYellowLeft.mp4')
+        yellowLanes_output = 'OutputVideos/solidYellowLeftOut.mp4'
+        clip2 = VideoFileClip('test_videos/solidYellowLeft.mp4')
+        yellowLanes_clip = clip2.fl_image(process_image)
+        yellowLanes_clip.write_videofile(yellowLanes_output, audio=False)
 
-    # Process Yellow Lane Lines Video
-    print('\nProcessing Video: solidYellowLeft.mp4')
-    yellowLanes_output = 'OutputVideos/solidYellowLeftOut.mp4'
-    clip2 = VideoFileClip('test_videos/solidYellowLeft.mp4')
-    yellowLanes_clip = clip2.fl_image(process_image)
-    yellowLanes_clip.write_videofile(yellowLanes_output, audio=False)
+    elif argv[1] == 'help':
+        print('1. To Process Images, Use:  python main.py images')
+        print('2. To Process Videos, Use:  python main.py videos')
 
-    print('\nProcessing Video: solidYellowLeft.mp4')
-    challenge = 'OutputVideos/challengeOutput.mp4'
-    clip3 = VideoFileClip('test_videos/challenge.mp4')
-    challenge_clip = clip3.fl_image(process_image)
-    challenge_clip.write_videofile(challenge, audio=False)
+    else:
+        print('\nPlease Enter Correct Argument !!!')
+        print('\nUse:\npython main.py help \nfor help ')
 
 # --------------------------- EOC ---------------------------
