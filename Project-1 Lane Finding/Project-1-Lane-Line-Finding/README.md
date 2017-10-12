@@ -186,3 +186,10 @@ This file contains all the functions described above in the pipeline.
 **3. Challenge Video**
 
 [![Challenge Video](https://img.youtube.com/vi/Kgct7p7SR-w/0.jpg)](https://www.youtube.com/watch?v=Kgct7p7SR-w)
+
+
+# To Do
+
+1. Test on other videos apart from the ones in the folder and try to make this pipeline more robust.
+
+2. Improve the performance of this pipeline on the Challenge video.
