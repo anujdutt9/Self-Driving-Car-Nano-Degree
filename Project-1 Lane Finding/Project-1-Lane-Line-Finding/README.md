@@ -14,9 +14,9 @@
 
 # Usage
 
-* Run from Command Line:
+**1. Run from Command Line**
 
-***1.*** Clone the project using the following command using Git Bash.
+Clone the project using the following command using Git Bash.
 
 ```
 git clone https://github.com/anujdutt9/Self-Driving-Car-Nano-Degree.git
@@ -42,7 +42,7 @@ For any help related to commands, use:
 python main.py help
 ```
 
-***2.*** IPython Jupyter Notebook
+**2. Using IPython Jupyter Notebook**
 
 Clone the repository using the following command:
 
