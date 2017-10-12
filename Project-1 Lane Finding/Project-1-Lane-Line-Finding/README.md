@@ -142,6 +142,18 @@ Finally after all these steps are done, we just take the lines generated in the 
 
 This file contains all the functions described above in the pipeline.
 
+**3. P1.ipynb**
+
+This is the IPython Jupyter notebook for this project.
+
+**4. test_images / test_videos**
+
+These folders contain the test images and videos provided by Udacity for this project.
+
+**5. OutputImages / OutputVideos**
+
+These folders contain the generated Output Images and Videos. The code looks for these folders and creates them by itself if they do not exist. Also, the code writes the final outputs directly into these folders.
+
 **NOTE**: This same pipeline is applied to the videos. The videos are processed frame by frame. Each frame can be considered as an image. Hence, the pipeline works the same for all the videos. 
 
 # Results
