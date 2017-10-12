@@ -144,6 +144,10 @@ The next step is to convert the colored image to grayscale image. This step is r
 
 [![Solid White Lane Lines Detection](https://img.youtube.com/vi/3CvsBqUm-Ho/0.jpg)](https://www.youtube.com/watch?v=3CvsBqUm-Ho)
 
+**2. Solid Yellow Lane Lines**
 
+[![Solid Yellow Lane Lines Detection](https://img.youtube.com/vi/6aMb8gTh0ZY/0.jpg)](https://www.youtube.com/watch?v=6aMb8gTh0ZY)
 
- 
+**3. Challenge Video**
+
+[![Challenge Video](https://img.youtube.com/vi/Kgct7p7SR-w/0.jpg)](https://www.youtube.com/watch?v=Kgct7p7SR-w)
