@@ -126,10 +126,21 @@ Now, since the image with the edges contains a lot of other edges as well i.e. t
 
 **g). Hough Transform and Filtering**
 
+Now that we have our yellow and white lane lines detected successfully, it's time to draw the lane lines on top of the original image and showcase that. Here comes a concept of RGB and HSV coordinates system. A line in a RGB system is equivalent to a point in the HSV system and vice versa. So, taking the hough transform of the image with lane lines in region of interest, we try to form the complete lines. We take the lines from that image, convert them to coordinates in the HSV system. So now we get a lot of coordinates for all lines in the image. We take in these coordinates and use an averaging system with slope constraints that provides us with the coordinates that might represent the lane lines. Then we pass all thesse coordinates into a "Polynomial Interpolation" function that outputs a line on the image that passes through all the coordinate points in the HSV coordinate system. Using this, we finally get our lane lines in our color of choice.
+
+![Hough Transform](writeupImages/FilteredHoughTransform.png "Hough Transform")
+
 **h). Weighted Image with Final Lane Lines**
+
+Finally after all these steps are done, we just take the lines generated in the previous step and draw them on the original input image. The final output looks something like this.
+
+![Final Output](writeupImages/FinalOutput.png "Final Output")
 
 **2. utils.py**
 
+This file contains all the functions described above in the pipeline.
+
+**NOTE**: This same pipeline is applied to the videos. The videos are processed frame by frame. Each frame can be considered as an image. Hence, the pipeline works the same for all the videos. 
 
 # Results
 
