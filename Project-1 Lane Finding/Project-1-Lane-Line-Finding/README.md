@@ -115,85 +115,25 @@ The next step is to convert the colored image to grayscale image. This step is r
 
 **1. Image-1:**
 
-* Input Image
-
-<img src="test_images/solidWhiteCurve.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/solidWhiteCurve_Process.jpg" width="900">
-
-* Final Output
-
 <img src="OutputImages/solidWhiteCurve_Final.jpg" width="700">
 
 **2. Image-2:**
-
-* Input Image
-
-<img src="test_images/solidWhiteRight.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/solidWhiteRight_Process.jpg" width="900">
-
-* Final Output
 
 <img src="OutputImages/solidWhiteRight_Final.jpg" width="700"> 
 
 **3. Image-3:**
 
-* Input Image
-
-<img src="test_images/solidYellowCurve2.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/solidYellowCurve2_Process.jpg" width="900">
-
-* Final Output
-
 <img src="OutputImages/solidYellowCurve2_Final.jpg" width="700">
 
 **4. Image-4:**
-
-* Input Image
-
-<img src="test_images/solidYellowCurve.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/solidYellowCurve_Process.jpg" width="900">
-
-* Final Output
 
 <img src="OutputImages/solidYellowCurve_Final.jpg" width="700"> 
 
 **5. Image-5:**
 
-* Input Image
-
-<img src="test_images/solidYellowLeft.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/solidYellowLeft_Process.jpg" width="900">
-
-* Final Output
-
 <img src="OutputImages/solidYellowLeft_Final.jpg" width="700">
 
 **6. Image-6:**
-
-* Input Image
-
-<img src="test_images/whiteCarLaneSwitch.jpg" width="600">
-
-* Image Processing Pipeline
-
-<img src="OutputImages/whiteCarLaneSwitch_Process.jpg" width="900">
-
-* Final Output
 
 <img src="OutputImages/whiteCarLaneSwitch_Final.jpg" width="700">
 
@@ -202,7 +142,7 @@ The next step is to convert the colored image to grayscale image. This step is r
 
 **1. Solid White Lane Lines**
 
-![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=3CvsBqUm-Ho)
+[![Solid White Lane Lines Detection](https://img.youtube.com/vi/3CvsBqUm-Ho/0.jpg)](https://www.youtube.com/watch?v=3CvsBqUm-Ho)
 
 
 
