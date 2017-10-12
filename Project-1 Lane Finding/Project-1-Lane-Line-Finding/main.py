@@ -95,6 +95,7 @@ def LaneLinesPipeline(img,name=None,arg=None):
     print('Time Taken for whole Process is {} ms'.format((end - start) * 100))
 
     if arg == 'images':
+        fig, ax = plt.subplots(nrows=2, ncols=2)
         arr = [['Greyscale & Gaussian Blurring','Edge Detection'],
                ['Region of Interest', 'Hough Transform']]
 
@@ -102,7 +103,6 @@ def LaneLinesPipeline(img,name=None,arg=None):
                 [image_roi, hough_transformed_image]]
 
         # Plot the Final Output with Outputs of Process Followed
-        fig,ax = plt.subplots(nrows=2,ncols=2)
 
         for i in range(0,2):
             for j in range(0,2):
@@ -146,10 +146,17 @@ if __name__ == '__main__':
 
         # Process Yellow Lane Lines Video
         print('\nProcessing Video: solidYellowLeft.mp4')
-        yellowLanes_output = 'OutputVideos/solidYellowLeftOut.mp4'
+        yellowLanesOut = 'OutputVideos/solidYellowLeftOut.mp4'
         clip2 = VideoFileClip('test_videos/solidYellowLeft.mp4')
         yellowLanes_clip = clip2.fl_image(process_image)
-        yellowLanes_clip.write_videofile(yellowLanes_output, audio=False)
+        yellowLanes_clip.write_videofile(yellowLanesOut, audio=False)
+
+        # Process Challenge Video
+        print('\nProcessing Video: challenge.mp4')
+        challengeOut = 'OutputVideos/challengeOutput.mp4'
+        clip3 = VideoFileClip('test_videos/challenge.mp4')
+        challenge_clip = clip3.fl_image(process_image)
+        challenge_clip.write_videofile(challengeOut, audio=False)
 
     elif argv[1] == 'help':
         print('1. To Process Images, Use:  python main.py images')

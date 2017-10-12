@@ -138,7 +138,7 @@ def draw_lines(img, lines, color=[253, 0, 0], thickness=5):
     # Now that we have the coordinates sorted for left and right lines, now we need to draw a line
     # For this, we use "Polynomial Interpolation", a technique under "Curve Fitting".
     # As the name suggests, the Aim of "Polynomial Interpolation" is to draw a line that passes through the coordinates that we have just separated.
-    if (x_left is not None) and (y_left is not None):
+    if x_left and y_left:
         # Draw a line that passes through points formed by "(x_left,y_left)".
         # Here, we need a straight line, so Order of Polynomial: "1"
         leftLine = np.poly1d(np.polyfit(x_left,y_left,1))
@@ -154,7 +154,7 @@ def draw_lines(img, lines, color=[253, 0, 0], thickness=5):
     # Now that we have the coordinates sorted for left and right lines, now we need to draw a line
     # For this, we use "Polynomial Interpolation", a technique under "Curve Fitting".
     # As the name suggests, the Aim of "Polynomial Interpolation" is to draw a line that passes through the coordinates that we have just separated.
-    if (x_right is not None) and (y_right is not None):
+    if x_right and y_right:
         # Draw a line that passes through points formed by "(x_left,y_left)".
         # Here, we need a straight line, so Order of Polynomial: "1"
         rightLine = np.poly1d(np.polyfit(x_right, y_right, 1))
