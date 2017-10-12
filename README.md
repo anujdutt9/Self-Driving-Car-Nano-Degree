@@ -5,7 +5,8 @@
 
 | S.No. |            Project Name        |                        Description / Aim                  |       Status      |
 | ----- | ------------------------------ | --------------------------------------------------------- | ----------------- |
-|  1.   |  Lane Finding                  | To detect the Lane Lines within which a car is driving.   |   Ongoing         |
+|  1.   |  Lane Finding                  | To detect the Lane Lines within which a car is driving.   |   Completed       |
+|  2.   |  Traffic Sign Classifier       | To recognize Traffic Signs and Speed Signs on road.       |   Ongoing         |
 
 
 # Requirements
