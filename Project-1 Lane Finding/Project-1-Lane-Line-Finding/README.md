@@ -200,8 +200,10 @@ These folders contain the generated Output Images and Videos. The code looks for
 [![Challenge Video](https://img.youtube.com/vi/Kgct7p7SR-w/0.jpg)](https://www.youtube.com/watch?v=Kgct7p7SR-w)
 
 
-# To Do
+# Potential Shortcomings of Current Pipeline
 
-1. Test on other videos apart from the ones in the folder and try to make this pipeline more robust.
+This pipeline works well for the images and videos which have straight lane lines i.e. straight left and right lane lines but for lane lines with some curvature, this pipeline does not holds good.
 
-2. Improve the performance of this pipeline on the Challenge video.
+# Possible Improvements
+
+This pipeline can be imporoved to work for images or videos having lane lines with some curvature. For that we could use some other techniques like regression etc. instead of using simple averaging.
