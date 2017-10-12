@@ -202,7 +202,7 @@ The next step is to convert the colored image to grayscale image. This step is r
 
 **1. Solid White Lane Lines**
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=3CvsBqUm-Ho)](https://www.youtube.com/watch?v=3CvsBqUm-Ho)
+![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=3CvsBqUm-Ho)
 
 
 
