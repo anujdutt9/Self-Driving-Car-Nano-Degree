@@ -12,7 +12,7 @@ Lane finding is the very basic part of a self driving car as it has to maintain 
 |  4. |   Canny Edge Detection   | How to use Canny Edge Detection to find lane lines using edges in Image. | Completed |
 |  5. |     Hough Transform      | Using Image to Hough Transform to plot Lane Lines. | Completed |
 |  6. | Hough Transform Filtered | Filtering the Image further to detect the Yellow & White Lane Lines | Completed |
-|  7. | Project-1: Lane Finding  | Using the knowledge from above learnings for our First Project. | Ongoing | 
+|  7. | Project-1: Lane Finding  | Using the knowledge from above learnings for our First Project. | Completed | 
 
 # Requirements
 
