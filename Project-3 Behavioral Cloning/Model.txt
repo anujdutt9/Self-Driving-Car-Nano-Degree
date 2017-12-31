@@ -1,0 +1,3 @@
+Lambda -> Cropping -> Conv -> Conv -> Conv -> Conv -> Conv -> Flatten -> Dense -> Dense -> Dense -> Summary
+
+Cropping: (50,20)
