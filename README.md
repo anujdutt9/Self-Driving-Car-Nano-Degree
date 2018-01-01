@@ -7,6 +7,7 @@
 | ----- | ------------------------------ | --------------------------------------------------------- | ----------------- |
 |  1.   |  Lane Finding                  | To detect the Lane Lines within which a car is driving.   |   Completed       |
 |  2.   |  Traffic Sign Classifier       | To recognize Traffic Signs and Speed Signs on road.       |   Ongoing         |
+|  3.   |  Behaviorial Cloning           | To train a DNN for autonomous driving of car in simulator.|   Completed       |
 
 
 # Requirements
