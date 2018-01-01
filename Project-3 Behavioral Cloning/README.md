@@ -73,6 +73,9 @@ In this step we separate the center, left and right images and as per the sugges
 | --------------------- | ------------------- | -------------------- |
 |![Center Camera Image](Images/center.png "Center Image")|![Left Camera Image](Images/left.png "Left Image")|![Center Camera Image](Images/right.png "Right Image")|
 
+|**After Augmentation**|**After Augmentation**|**After Augmentation**|
+|![Center Camera Image](Images/AugCenter.png "Augmented Center Image")|![Left Camera Image](Images/leftAug.png "Augmented Left Image")|![Center Camera Image](Images/rightAug.png "Augmented Right Image")|
+
 **c). Data Augmentation**
 
 Since, the dataset we have is a bit small i.e. 20,000 images, so to collect more data there are two options: either drive on the track for long time or data augmentation. I followed the second approach.
