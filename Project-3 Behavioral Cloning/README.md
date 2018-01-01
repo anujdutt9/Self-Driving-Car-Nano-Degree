@@ -69,6 +69,10 @@ The data is collected using the training part in the simulator where we drive th
 
 In this step we separate the center, left and right images and as per the suggestions in the lecture, we add a correction value of 0.2 to the left and right steering angle values.
 
+|**Center Camera Image**|**Left Camera Image**|**Right Camera Image**|
+| --------------------- | ------------------- | -------------------- |
+|![Center Camera Image](Images/center.jpg "Center Image")|![Left Camera Image](Images/left.jpg "Left Image")|![Center Camera Image](Images/right.jpg "Right Image")|
+
 **c). Data Augmentation**
 
 Since, the dataset we have is a bit small i.e. 20,000 images, so to collect more data there are two options: either drive on the track for long time or data augmentation. I followed the second approach.
