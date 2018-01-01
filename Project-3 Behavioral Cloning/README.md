@@ -163,3 +163,9 @@ The current pipeline has been only tested on Track 1 and not Track 2. Also, tech
 # Possible Improvements
 
 Further training and model improvements in terms of better data augmentation like changing gamma values of images, applying gaussian blurr to smoothen the images before processing, shadow in images etc. is required to make the model robust.
+
+# References
+
+**1. Training Data:** Udacity Self Driving Car Simulator
+
+**2. CNN Model:** NVIDIA Paper [https://arxiv.org/pdf/1604.07316.pdf]
