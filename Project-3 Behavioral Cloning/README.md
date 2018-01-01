@@ -134,7 +134,7 @@ Apart from that, I also tried to conver the images from RGB to YUV as stated in 
 
 **3. drive.py**
 
-This file is provided by Udacity to run the trained model for the car in autonomous mode. I just changed the values for throttle till the point the output looked fine to me.
+This file is provided by Udacity to run the trained model for the car in autonomous mode. I just changed the values for throttle till the point the output looked fine to me. For my case, I have changed the speed from 9 to 15.
 
 **4. model.h5**
 
@@ -158,11 +158,11 @@ This is the final video of the car driving in autonomous mode.
 
 # Potential Shortcomings of Current Pipeline
 
-The current pipeline has been only tested on Track 1 and not Track 2. Also, techniques like including shadow in images for data augmentation, gaussian blurring for more smooth images before processing, better CNN model to avoid overfitting like using Dropout, more data etc. is required.
+The current pipeline has been only tested on Track 1 and not Track 2. Also, techniques like including shadow in images for data augmentation, gaussian blurring for more smooth images before processing, better CNN model to avoid overfitting like using Dropout, more data etc. is required. Also, currently this model is able to drive the car autonomouslly till the throttle is set to about 15. If I increase this value to max i.e. 30 or above 15, the car tries to move out of the path.
 
 # Possible Improvements
 
-Further training and model improvements in terms of better data augmentation like changing gamma values of images, applying gaussian blurr to smoothen the images before processing, shadow in images etc. is required to make the model robust.
+Further training and model improvements in terms of better data augmentation like changing gamma values of images, applying gaussian blurr to smoothen the images before processing, shadow in images etc. is required to make the model robust. This will also improve the performance of the car at higher speeds.
 
 # References
 
