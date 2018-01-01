@@ -72,8 +72,7 @@ In this step we separate the center, left and right images and as per the sugges
 |**Center Camera Image**|**Left Camera Image**|**Right Camera Image**|
 | --------------------- | ------------------- | -------------------- |
 |![Center Camera Image](Images/center.png "Center Image")|![Left Camera Image](Images/left.png "Left Image")|![Center Camera Image](Images/right.png "Right Image")|
-
-|**After Augmentation**|**After Augmentation**|**After Augmentation**|
+| **Center Augmented Image** | **Left Augmented Image** | **Right Augmented Image** |
 |![Center Camera Image](Images/AugCenter.png "Augmented Center Image")|![Left Camera Image](Images/leftAug.png "Augmented Left Image")|![Center Camera Image](Images/rightAug.png "Augmented Right Image")|
 
 **c). Data Augmentation**
