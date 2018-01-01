@@ -3,7 +3,7 @@ import csv
 import cv2
 import numpy as np
 from sklearn.utils import shuffle
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import matplotlib
 #matplotlib.use('Agg')
 #get_ipython().magic('matplotlib inline')
