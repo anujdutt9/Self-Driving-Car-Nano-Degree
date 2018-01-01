@@ -45,7 +45,7 @@ model_validation_generator = batch_data_generator(Xy_validation, batch_size=32)
 
 
 # ------------------------------------------ CNN Model ----------------------------------------------
-# Model Ref: NVIDIA []
+# Model Ref: NVIDIA Paper [https://arxiv.org/pdf/1604.07316.pdf]
 def cnnModel():
     model = Sequential()
     model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160, 320, 3)))
