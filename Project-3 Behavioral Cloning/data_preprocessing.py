@@ -123,6 +123,7 @@ def getImagesAndMeasurements(data_path, image_path, correction_val):
     4. Add the Augmented Images to the Original Image set in the Generator Function.
 '''
 # Add random brightness to Images
+# Hint Taken From: https://stackoverflow.com/questions/32609098/how-to-fast-change-image-brightness-with-python-opencv
 def random_brightness(image):
     # Convert image from RGB to HSV
     rgbTohsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
@@ -206,6 +207,7 @@ def plot_image(input_image):
 
 
 # Function to plot Model Metrics
+# Reference: https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/
 def plot_model_metrics(hist_obj):
     plt.plot(hist_obj.history['loss'])
     plt.plot(hist_obj.history['val_loss'])
