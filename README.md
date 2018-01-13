@@ -3,9 +3,9 @@
 
 # Project List
 
+**SDCND TERM - I : COMPUTER VISION AND DEEP LEARNING**
+
 | S.No. |            Project Name        |                        Description / Aim                  |       Status      |
-| ----- | ------------------------------ | --------------------------------------------------------- | ----------------- |
-|									SDCND TERM - I : COMPUTER VISION AND DEEP LEARNING 
 | ----- | ------------------------------ | --------------------------------------------------------- | ----------------- |
 |  1.   |  Lane Finding                  | To detect the Lane Lines within which a car is driving.   |   Completed       |
 |  2.   |  Traffic Sign Classifier       | To recognize Traffic Signs and Speed Signs on road.       |   Ongoing         |
