@@ -9,6 +9,7 @@
 |  2.   |  Traffic Sign Classifier       | To recognize Traffic Signs and Speed Signs on road.       |   Ongoing         |
 |  3.   |  Behaviorial Cloning           | To train a DNN for autonomous driving of car in simulator.|   Completed       |
 |  4.   |  Advanced Lane Line Finding    | Find Lane Lines Robustly in diffeent Conditions.          |   Ongoing         |
+|  5.   |  Vehicle Detection & Tracking  | To find cars in an image and in the video from cameras.   |   Ongoing         |
 
 
 # Requirements
