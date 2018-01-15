@@ -158,6 +158,11 @@ The Final Pipeline was a combination of all the functions and steps described ab
 
 [![Challenge Video](https://img.youtube.com/vi/72ZcjM0s2Q0/0.jpg)](https://www.youtube.com/watch?v=72ZcjM0s2Q0)
 
+**Harder Challenge Video**
+
+[![Challenge Video](https://img.youtube.com/vi/xzWXoNR_Bso/0.jpg)](https://www.youtube.com/watch?v=xzWXoNR_Bso)
+
+**NOTE: The current pipeline failed on this video. Still working on the current Piepline to get this video right.**
 
 # Potential Shortcomings of Current Pipeline
 
