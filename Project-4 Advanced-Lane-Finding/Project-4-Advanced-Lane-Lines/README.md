@@ -1,39 +1,159 @@
 ## Advanced Lane Finding
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+***This repository contains the fourth project i.e. Advanced Lane Finding for Udacity SDCND.***
 
-In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
+# Requirements
 
-Creating a great writeup:
----
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
+**1.** Python 3.5+
 
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
+**2.** OpenCV
 
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
+**3.** Matplotlib
 
-The Project
----
 
-The goals / steps of this project are the following:
+# Usage
 
-* Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
-* Apply a distortion correction to raw images.
-* Use color transforms, gradients, etc., to create a thresholded binary image.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+Just go through the iPython Notebook for complete details of the code and its working.
 
-The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
+# Pipeline
 
-To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `ouput_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is the video your pipeline should work well on.  
+**1. Camera Caliberation:**
 
-The `challenge_video.mp4` video is an extra (and optional) challenge for you if you want to test your pipeline under somewhat trickier conditions.  The `harder_challenge.mp4` video is another optional challenge and is brutal!
+The first step in this project was the Camera Caliberation. For doing this three steps were followed:
 
-If you're feeling ambitious (again, totally optional though), don't stop there!  We encourage you to go out and take video of your own, calibrate your camera and show us how you would implement this project from scratch!
+**a). Find Chessboard Corners**
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+The Chessboard images were used for camera caliberation. So the first step was to find the corners of the chessboard from the images.
 
+**b). Draw Chessboard Corners**
+
+Once the chessboard corners were found they were drawn onto to see that the corners re correctly recognized. From 20 images, 17 images were correctly identified for their corners. So, the overall Percentage of Caliberation Images used is 85.0 %.
+
+![Chessboard Corners](output_images/ChessboardCorners.png?raw=true "Chessboard Corners")    
+
+**c). Do Camera Caliberation**
+
+To do this, the openCV function "cv2.calibrateCamera()" is used. This was tested on chessboard and road images.
+
+![Undistorted Chessboard](output_images/UndistortedCheckboard.png?raw=true "Undistorted Chessboard")   
+
+![Undistorted Road](output_images/download.png?raw=true "Undistorted Road") 
+
+**2. Finding Region of Interest:**
+
+The next step was to find the region of interest on the road. This is the region of the lanes in which the car is currently driving. We want to concentrate in this region only.
+
+![Region of Interest](output_images/ROI.png?raw=true "Region of Interest") 
+
+**3. Apply Color and Gradient Threshold:**
+
+The next step is to explore the color and gradient thresholds so as to correctly and robustly identify the lane lines and their colors namely yellow and white in all conditions.
+
+**a). RGB Colorspace:**
+
+![RGB Colorspace](output_images/rgb.png?raw=true "RGB Colorspace") 
+
+**b). HSV Colorspace:**
+
+![HSV Colorspace](output_images/hsv.png?raw=true "HSV Colorspace") 
+
+**c). HLS Colorspace:**
+
+![HLS Colorspace](output_images/hls.png?raw=true "HLS Colorspace") 
+
+**d). Lab Colorspace:**
+
+![Lab Colorspace](output_images/Lab.png?raw=true "Lab Colorspace") 
+
+A lot of options were tried in this pursuit and finally I was settled on using a thresholded combination of "R + G" from RGB Colorspace for Yellow lane detection, S-Colorspace from HSV and L-Colorspace from HLS colorspace for variations in lighting conditions.
+
+**4. Gradient Thresholding Methods Tested:**
+
+The three thresholding methods were teste for images namely Sobel Threshold, Sobel Gradient Magnitude and Sobel Gradient Direction.
+
+![Sobel Gradient Threshold](output_images/SobelGradient.png?raw=true "Sobel Gradient Threshold")
+
+![Sobel Gradient Magnitude](output_images/sobelMag.png?raw=true "Sobel Gradient Magnitude")
+
+![Sobel Direction](output_images/sobelDirection.png?raw=true "Sobel Direction")
+
+
+**5. Combine Color and Gradient Thresholds**
+
+After testing the different combinations for the above thresholds and colorspaces, we combined the selected colorspaces and thresholds together to get the final image.
+
+For the sobel thresholds, the Sobel Threshold and the Magnitude was thresholded and combined together with the colorspaces to get the final lane lines image as shown below.
+
+![Threshold + Magnitude](output_images/threshMag.png?raw=true "Threshold + Magnitude")
+
+**6. Image Warping**
+
+Once, we got the image that depicted the lane lines petty clearly, it was time to get a new perspective. So, using the getPerspective function from OpenCV, I was able to get tht "Bird's Eye View" of the lanes.
+
+![Warped Image](output_images/warpedImage.png?raw=true "Warped Image")
+
+**7. Lane Finding using Histogram**
+
+To get robust lane values, we used the histogram technique. We plotted the histogram for the warped lane line image and got the two peaks that correctly depict the lane lines and no other noise.
+
+![Histogram](output_images/histogram.png?raw=true "Histogram")
+
+**8. Using Sliding Window Method to Fit a Polynomial**
+
+Once the lane lines were recognized robustly using the histogram for the warped image, we used the sliding window method to find the lane lines and draw a box around the lane lines and fit a line to the lane lines.
+
+**9. Search for Lanes in the Margins and Visualize them**
+
+Once we got the lane lines and the windows around them, we get the left and right lane values that we can use. So, next step is to look for lane lines in the margins computed and visualize them.
+
+![Lane Lines](output_images/lanes.png?raw=true "Lane Lines")
+
+**10. Measure Radius of Curvature**
+
+Once we got the accurate measurements for the lane lines and drew them, then I computed the radius of curvature for the lane lines along with the curvature. This code is inspired by Udacity's lectures.
+
+The Output for this looks like this:
+
+```
+Radius of Curvature: 4136.04 m
+Center offset: 0.14 m
+```
+
+**11. Fill in the Lane Lines**
+
+Once we got the lane lines recognized, we fill the lane lines in between to show the current lane as filled up.
+
+![Filled Lane Lines](output_images/lanesFill.png?raw=true "Filled Lane Lines")
+
+**12. Final Pipeline**
+
+The Final Pipeline was a combination of all the functions and steps described above.
+
+# Results
+
+# Pipeline on Images
+
+![Test Image 1](output_images/final1.png?raw=true "Test Image 1")
+
+![Test Image 2](output_images/final2.png?raw=true "Test Image 2")
+
+![Test Image 3](output_images/final3.png?raw=true "Test Image 3")
+
+![Test Image 4](output_images/final4.png?raw=true "Test Image 4")
+
+![Test Image 5](output_images/final5.png?raw=true "Test Image 5")
+
+![Test Image 6](output_images/final6.png?raw=true "Test Image 6")
+
+
+# Pipeline on Videos
+
+**Project Video**
+
+[![Project Video](https://img.youtube.com/vi/VAK-iWkVRE0/0.jpg)](https://www.youtube.com/watch?v=VAK-iWkVRE0)
+
+
+**Challenge Video**
+
+[![Challenge Video](https://img.youtube.com/vi/72ZcjM0s2Q0/0.jpg)](https://www.youtube.com/watch?v=72ZcjM0s2Q0)
