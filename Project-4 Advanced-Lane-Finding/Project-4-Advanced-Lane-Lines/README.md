@@ -176,3 +176,9 @@ The following are the shortcoming of the current pipeline:
 **2.** I can try to average over a small number of frames and using those to get the next predictions for the lane lines. How this might help is where we have lanes that are very curvy like the ones in the mountains.
 
 **3.** The other approach would prove useful even for the car when it is driving on a plain road and hence the performance will not be affected in the plains.
+
+# References
+
+**1.** Udacity Lectures
+
+**2.** OpenCV Documentation & Examples
