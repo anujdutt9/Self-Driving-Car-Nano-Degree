@@ -157,3 +157,22 @@ The Final Pipeline was a combination of all the functions and steps described ab
 **Challenge Video**
 
 [![Challenge Video](https://img.youtube.com/vi/72ZcjM0s2Q0/0.jpg)](https://www.youtube.com/watch?v=72ZcjM0s2Q0)
+
+
+# Potential Shortcomings of Current Pipeline
+
+The following are the shortcoming of the current pipeline:
+
+**1.** This pipeline is not able to work well when the image or video have a shadow. As can be seen in the challenge video, at one point when it get a bit of shadow for a very small amount of time, it behave wieredly but the comes back to the track. This behavior is also noticed in the Harder Challenge Video output as well.
+
+**2.** This piepline has a hard time looking for the lane lines when the brightness is pretty high or the cameras get a high brightness image as input due to the Sun. To avoid this and reduce the effect of this, I tried using Histogram Normalization and also tried playinng with the Gamma values of the Image. But unfortunately, that didn't worked out that well as expected.
+
+**3.** In the harder video, the pipeline has a hard time recognizing the lane lines. One issue with the pipeline is that it looks for a bit longer section of the lane. This works pretty well for the project and the challenge videos but proves out to be a complete disaster for the Harder Challenge Video.
+
+# Possible Improvements
+
+**1.** One aproach that might help useful can be the dynamica selection of threshold parameters based on the resulting number of activated pixels rather than hard coding them. 
+
+**2.** I can try to average over a small number of frames and using those to get the next predictions for the lane lines. How this might help is where we have lanes that are very curvy like the ones in the mountains.
+
+**3.** The other approach would prove useful even for the car when it is driving on a plain road and hence the performance will not be affected in the plains.
