@@ -160,7 +160,7 @@ The Final Pipeline was a combination of all the functions and steps described ab
 
 **Harder Challenge Video**
 
-[![Challenge Video](https://img.youtube.com/vi/xzWXoNR_Bso/1.jpg)](https://www.youtube.com/watch?v=xzWXoNR_Bso)
+[![Challenge Video](https://img.youtube.com/vi/xzWXoNR_Bso/0.jpg)](https://www.youtube.com/watch?v=xzWXoNR_Bso)
 
 **NOTE: The current pipeline failed on this video. Still working on the current Piepline to get this video right.**
 
