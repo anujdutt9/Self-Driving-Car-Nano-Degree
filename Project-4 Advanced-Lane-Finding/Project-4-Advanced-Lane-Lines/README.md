@@ -116,8 +116,8 @@ Once we got the accurate measurements for the lane lines and drew them, then I c
 The Output for this looks like this:
 
 ```
-Radius of Curvature: 4136.04 m
-Center offset: 0.14 m
+Radius of curvature: 837.44 m
+Center offset: 0.15 m
 ```
 
 **11. Fill in the Lane Lines**
@@ -134,15 +134,9 @@ The Final Pipeline was a combination of all the functions and steps described ab
 
 # Pipeline on Images
 
-![Test Image 1](output_images/final1.png?raw=true "Test Image 1")
-
 ![Test Image 2](output_images/final2.png?raw=true "Test Image 2")
 
 ![Test Image 3](output_images/final3.png?raw=true "Test Image 3")
-
-![Test Image 4](output_images/final4.png?raw=true "Test Image 4")
-
-![Test Image 5](output_images/final5.png?raw=true "Test Image 5")
 
 ![Test Image 6](output_images/final6.png?raw=true "Test Image 6")
 
@@ -151,16 +145,16 @@ The Final Pipeline was a combination of all the functions and steps described ab
 
 **Project Video**
 
-[![Project Video](https://img.youtube.com/vi/VAK-iWkVRE0/0.jpg)](https://www.youtube.com/watch?v=VAK-iWkVRE0)
+[![Project Video](https://img.youtube.com/vi/jldqNPbB524/0.jpg)](https://www.youtube.com/watch?v=jldqNPbB524)
 
 
 **Challenge Video**
 
-[![Challenge Video](https://img.youtube.com/vi/72ZcjM0s2Q0/0.jpg)](https://www.youtube.com/watch?v=72ZcjM0s2Q0)
+[![Challenge Video](https://img.youtube.com/vi/rrzXkqcglok/0.jpg)](https://www.youtube.com/watch?v=rrzXkqcglok)
 
 **Harder Challenge Video**
 
-[![Challenge Video](https://img.youtube.com/vi/xzWXoNR_Bso/0.jpg)](https://www.youtube.com/watch?v=xzWXoNR_Bso)
+[![Challenge Video](https://img.youtube.com/vi/Eqcj78Y4cbs/0.jpg)](https://www.youtube.com/watch?v=Eqcj78Y4cbs)
 
 **NOTE: The current pipeline failed on this video. Still working on the current Piepline to get this video right.**
 
